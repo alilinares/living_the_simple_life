@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root{
+    --heading-color: #143774;
+    --font-color: #707070  ; /* var(--font-color); */
+    --link-color: #1792D2;}
+
+* {box-sizing: border-box;}
+
+body{
+    margin:0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:300;
+    font-size:1rem;}
+
+img{
+    max-width:100%;
+    display:block;}
+
+/* ======================
+TYPOGRAPHY
+======================*/
+
+h1,h2,h3{
+    color: var(--heading-color);
+    font-weight: 400;
+    font-family: 'Lora', serif;  
+    margin-top:0;  
+}
+
+.post-title, .widget-title{
+    font-size:1.5rem; /* h1 title */
+}
+
+.post-date{
+    font-weight: 300;
+    color: var(--font-color);
+    font-size: 0.5rem;
+}
+
+.container p{
+    color:var(--font-color);
+    line-height: 1.5rem;
+}
+.feature-line{
+    color:#717171;
+    font-weight:700;
+}
+.feature-line-2{
+    color:var(--link-color);
+}
+.feature-line-2:hover, .feature-line-2:focus{
+    color:#143774;
+}
+
+.read-more{
+    color: var(--link-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size:0.5rem;
+    font-weight:700;
+    letter-spacing: 2px; 
+    display:inline-block; 
+    margin: 2.5em 0 ;
+}
+.read-more:hover, .read-more:focus{
+    color: #143774;
+    text-decoration: underline;
+}
+
+.widget-title{
+    text-transform: uppercase;
+    font-weight:700;
+}
+
+hr{
+    border:1px solid rgb(109, 107, 107);
+}
+
+
+/* ======================
+Layout
+======================*/
+.container{
+    width:98%;
+    max-width:900px;
+    margin:0 auto;
+    padding:1em;
+    }
+    
+
+/* flexbox container */
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;}
+
+    @media (min-width:675px){
+        .container-flex{
+            flex-direction:row;
+        }
+        .col-main{
+            width:70%;
+        }
+        .col-side{
+            width:25%;
+        }
+    }
+/* ======================
+HEADER
+====================== */
+header{
+    background-color: #F8F8F8;
+    padding:2em 0;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.site-title h1 {
+    margin:0;
+    font-size:2rem;
+}
+.subtitle{
+    margin:0;
+    font-weight:700;
+    font-size:0.5rem;
+    color:#1792D2;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* ======================
+NAVIGATION
+====================== */
+/* ul becomes the flexbox because it is the container that will hold block level flex-items - they are the 'li' tags */
+.nav-list{
+    list-style-type: none;
+    display:flex;
+    justify-content: center;
+}
+
+.nav-list-item{margin-left: 2em;}
+
+.nav-list a{
+    font-size:.8rem;
+    text-decoration: none;
+    color: #707070;
+    text-transform: uppercase;
+    padding: .25em 0;
+}
+
+.nav-list a:hover,
+.nav-list a:focus{
+    color:#1792d2;
+}
+
+.current-page{
+    /* text-decoration: underline; */
+    border-bottom: 1px solid #707070;
+}
+.current-page:hover {
+    color: #707070 !important;
+}
+
+/* Navigation flex */
+@media (max-width:675px){
+    .nav-list{
+        flex-direction: column;
+        
+    }
+    .nav-list-item{
+        margin: .5em 0;
+    }
+}
+
+/* ======================
+MAIN
+====================== */
+
+.main{
+    margin:0;
+}
+/* Flexbox for post list */
+.post{
+    display:flex;
+    flex-direction: column;
+    margin:2em 0;
+}
+
+.post-col-main{
+    order:2;
+}
+.post-col-secondary{
+    order:1;
+}
+
+@media (min-width:675px){
+    .post{
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    .featured-post{
+        display:flex;
+        flex-direction: column;
+    }
+    .post-col-main{
+        width:68%;
+    }
+    .post-col-secondary{
+        width:30%;
+    }
+
+    .post-img{
+        width:100%;
+        height:auto;
+        object-fit: cover;
+        object-position: left;
+    }
+    
+    .featured-post-img{
+        order:-2;
+    }
+    .feature-post-date{
+        order:-1;
+    }
+    
+}
+
+/* ======================
+SIDE
+====================== */
+.sidebar-widget{
+    padding:1em;
+    border: 20px solid #EBEBEB;
+    margin-bottom:2em;
+}
+
+.widget-recent-posts{
+    display:flex;
+    flex-direction: column;
+    border-bottom: 1px solid #717171;
+    margin-bottom:1em;
+}
+
+.widget-recent-post-img{
+    order:-1;
+}
+
+
+
+.widget-title{
+    font-size:1rem;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight:700;
+}
+
+.widget-recent-post-title{
+    font-size:1rem;
+}
+
+.widget-recent-posts:last-child{
+    margin:0;
+    border:0;
+}
+
+.widget-body{
+    font-size: .8rem;
+
+}
+
+/* ======================
+Footer
+====================== */
+
+.footer{
+    background-color: var(--heading-color);
+    color:white;
+    text-align:center;
+    padding:3em 0;
+}
